@@ -272,28 +272,15 @@ let dragonflies = [
 // } 
 // })
 
-// let myChores = ["🧹", "🧼", "🛍️" ]
-// const choresDisplay = document.getElementById("chores-display")
-
 const dragonflyDisplay = document.getElementById("dragonfly-display")
 
 function renderDragonflies() {
     let allDragonflies = ""
     for (let i = 0; i < dragonflies.length; i++) {
-        allDragonflies += `<li class="name">${dragonflies[i]}</li>`
+        allDragonflies += `<li class="name">${dragonflies[i].Family} / ${dragonflies[i].Scientific} / ${dragonflies[i].English}</li>`
+        console.log(allDragonflies)
     } 
     dragonflyDisplay.innerHTML = allDragonflies
 }
 
 renderDragonflies()
-
-// function renderChores() {
-//     let choresList = ""
-//     for (let i=0; i < myChores.length; i++) {
-//     choresList += "<li>" + myChores[i] + "</li>"
-//     // choresList += myChores[i] - vertical text was lr or rl. couldn't find centre
-//     }
-//     choresDisplay.innerHTML = choresList
-// }
-
-renderChores()
