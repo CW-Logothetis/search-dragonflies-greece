@@ -257,17 +257,43 @@ let dragonflies = [
         "English": "Vagrant darter"}
 ]
 
-document.getElementById("search-input").addEventListener("keyup", function(event) {
-let searchQuery = event.target.value.toLowerCase()
-let allNamesDOMCollection = document.getElementsByClassName("name")
+// document.getElementById("search-input").addEventListener("keyup", function(event) {
+// let searchQuery = event.target.value.toLowerCase()
+// let allNamesDOMCollection = document.getElementsByClassName("name")
 
-for (let i = 0; i < allNamesDOMCollection.length; i++) {
-    const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
+// for (let i = 0; i < allNamesDOMCollection.length; i++) {
+//     const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
 
-    if (currentName.includes(searchQuery)) {
-        allNamesDOMCollection[i].style.display = "block"
-    } else {
-        allNamesDOMCollection[i].style.display = "none"
-    }
-} 
-})
+//     if (currentName.includes(searchQuery)) {
+//         allNamesDOMCollection[i].style.display = "block"
+//     } else {
+//         allNamesDOMCollection[i].style.display = "none"
+//     }
+// } 
+// })
+
+// let myChores = ["🧹", "🧼", "🛍️" ]
+// const choresDisplay = document.getElementById("chores-display")
+
+const dragonflyDisplay = document.getElementById("dragonfly-display")
+
+function renderDragonflies() {
+    let allDragonflies = ""
+    for (let i = 0; i < dragonflies.length; i++) {
+        allDragonflies += `<li class="name">${dragonflies[i]}</li>`
+    } 
+    dragonflyDisplay.innerHTML = allDragonflies
+}
+
+renderDragonflies()
+
+// function renderChores() {
+//     let choresList = ""
+//     for (let i=0; i < myChores.length; i++) {
+//     choresList += "<li>" + myChores[i] + "</li>"
+//     // choresList += myChores[i] - vertical text was lr or rl. couldn't find centre
+//     }
+//     choresDisplay.innerHTML = choresList
+// }
+
+renderChores()
