@@ -257,27 +257,55 @@ let dragonflies = [
         "English": "Vagrant darter"}
 ]
 
-// document.getElementById("search-input").addEventListener("keyup", function(event) {
-// let searchQuery = event.target.value.toLowerCase()
-// let allNamesDOMCollection = document.getElementsByClassName("name")
+document.getElementById("search-input").addEventListener("keyup", function(event) {
+let searchQuery = event.target.value.toLowerCase()
+let allNamesDOMCollection = document.getElementsByClassName("name")
 
-// for (let i = 0; i < allNamesDOMCollection.length; i++) {
-//     const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
+for (let i = 0; i < allNamesDOMCollection.length; i++) {
+    const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
 
-//     if (currentName.includes(searchQuery)) {
-//         allNamesDOMCollection[i].style.display = "block"
-//     } else {
-//         allNamesDOMCollection[i].style.display = "none"
-//     }
-// } 
-// })
+    if (currentName.includes(searchQuery)) {
+        allNamesDOMCollection[i].style.display = "block"
+    } else {
+        allNamesDOMCollection[i].style.display = "none"
+    }
+} 
+})
 
 const dragonflyDisplay = document.getElementById("dragonfly-display")
+
+// function renderDragonflies() {
+//     let allDragonflies = ""
+//     for (let i = 0; i < dragonflies.length; i++) {
+//         allDragonflies += `<li class="name">${dragonflies[i].Family} / ${dragonflies[i].Scientific} / ${dragonflies[i].English}</li>`
+//         console.log(allDragonflies)
+//     } 
+//     dragonflyDisplay.innerHTML = allDragonflies
+// }
+
+// renderDragonflies()
 
 function renderDragonflies() {
     let allDragonflies = ""
     for (let i = 0; i < dragonflies.length; i++) {
-        allDragonflies += `<li class="name">${dragonflies[i].Family} / ${dragonflies[i].Scientific} / ${dragonflies[i].English}</li>`
+        allDragonflies += 
+
+        // `<li class="name">${dragonflies[i].Family} / ${dragonflies[i].Scientific} / ${dragonflies[i].English}</li>`
+
+        `
+            <tr class="name">
+                <th>
+                <td id='family'><i>${dragonflies[i].Family}</i></td>
+                </th>
+                <th>
+                <td id='scientific'><i>${dragonflies[i].Scientific}</i></td>
+                </th>
+                <th>
+                <td id='english'>${dragonflies[i].English}</td>
+                </th> 
+            </tr>
+    `
+
         console.log(allDragonflies)
     } 
     dragonflyDisplay.innerHTML = allDragonflies

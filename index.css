@@ -1,3 +1,12 @@
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #131313;
+    background-color: #fff;
+}
+
 #dragonfly-list {
     display: block;
     color:red;
@@ -7,3 +16,77 @@
 #dragonfly-list .name {
     list-style-type: none;
 }
+
+table {
+    margin: 0 auto;
+    table-layout: auto;
+    width: 800px;
+    border-collapse: collapse;
+    background-color: #adc2eb;
+    /* color: white; */
+    /* border: 2px solid gray; */
+    /* color: #4472C4; */
+  }
+
+  .table-section {
+    margin-bottom: 30px;
+}
+  
+  /* thead th:nth-child(1) {
+    width: 20%;
+  }
+  
+  thead th:nth-child(2) {
+    width: 30%;
+  }
+  
+  thead th:nth-child(3) {
+    width: 50%;
+  } */
+  
+  
+  td {
+    padding: 7px;
+    letter-spacing: 1px;
+    /* min-width: 50px; */
+  }
+  
+  th {
+    letter-spacing: 2px;
+  }
+    
+  /* tbody td {
+    text-align: center;
+  }
+  
+  tfoot th {
+    text-align: center;
+  } */
+  
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  
+  tbody tr:nth-child(even) {
+    /* background-color: black; */
+    color: white;
+  }
+  
+  #family {
+    color: #404040;
+    font-size: 14px;
+}
+
+#scientific {
+    color: #131313;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+#english {
+    color: #131313;
+    font-size: 16px;
+    
+}
+  
