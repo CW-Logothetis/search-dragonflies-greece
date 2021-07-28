@@ -7,6 +7,10 @@ html, body {
     background-color: #fff;
 }
 
+input {
+    margin: 30px 15px;
+}
+
 #dragonfly-list {
     display: block;
     color:red;
@@ -48,7 +52,6 @@ table {
   td {
     padding: 7px;
     letter-spacing: 1px;
-    /* min-width: 50px; */
   }
   
   th {
