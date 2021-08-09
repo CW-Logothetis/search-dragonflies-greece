@@ -48,7 +48,8 @@ let dragonflies = [
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Coenagrion puella", 
-        "English": "Azure damselfly"}, 
+        "English": "Azure damselfly",
+        image: "images/coenagrioin-puella.JPG"}, 
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Coenagrion pulchellum", 
@@ -257,42 +258,19 @@ let dragonflies = [
         "English": "Vagrant darter"}
 ]
 
-document.getElementById("search-input").addEventListener("keyup", function(event) {
-let searchQuery = event.target.value.toLowerCase()
-let allNamesDOMCollection = document.getElementsByClassName("name")
+// Page loads with all Dragonflies
+// a. dragonflies rendered via a HTML table with class "name"
+// b. as user types, dragonflies displayed or not via a loop on "name"
 
-for (let i = 0; i < allNamesDOMCollection.length; i++) {
-    const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
-
-    if (currentName.includes(searchQuery)) {
-        allNamesDOMCollection[i].style.display = "block"
-    } else {
-        allNamesDOMCollection[i].style.display = "none"
-    }
-} 
-})
+// a. HTML table
 
 const dragonflyDisplay = document.getElementById("dragonfly-display")
-
-// function renderDragonflies() {
-//     let allDragonflies = ""
-//     for (let i = 0; i < dragonflies.length; i++) {
-//         allDragonflies += `<li class="name">${dragonflies[i].Family} / ${dragonflies[i].Scientific} / ${dragonflies[i].English}</li>`
-//         console.log(allDragonflies)
-//     } 
-//     dragonflyDisplay.innerHTML = allDragonflies
-// }
-
-// renderDragonflies()
 
 function renderDragonflies() {
     let allDragonflies = ""
     for (let i = 0; i < dragonflies.length; i++) {
         allDragonflies += 
-
-        // `<li class="name">${dragonflies[i].Family} / ${dragonflies[i].Scientific} / ${dragonflies[i].English}</li>`
-
-        `
+            `
             <tr class="name">
                 <th>
                 <td id='family'><i>${dragonflies[i].Family}</i></td>
@@ -304,11 +282,59 @@ function renderDragonflies() {
                 <td id='english'>${dragonflies[i].English}</td>
                 </th> 
             </tr>
-    `
-
-        console.log(allDragonflies)
+            `
     } 
     dragonflyDisplay.innerHTML = allDragonflies
 }
 
 renderDragonflies()
+
+// b. loop on "name"
+
+let searchInput = document.getElementById("search-input")
+
+searchInput.addEventListener("keyup", function(event) {
+    let searchQuery = event.target.value.toLowerCase()
+    let allNamesDOMCollection = document.getElementsByClassName("name")
+
+    for (let i = 0; i < allNamesDOMCollection.length; i++) {
+        const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
+
+        if (currentName.includes(searchQuery)) {
+            allNamesDOMCollection[i].style.display = "flex"
+            
+            // a. simple original version - works
+            allNamesDOMCollection[i].innerHTML =
+            // `
+            // <td id='scientific'>
+            //     <i>${dragonflies[i].Scientific}
+            //     <br>
+            //     ${dragonflies[i].English}</i>
+            // </td>
+            // `
+
+            // b. attempt to create wrapping flex boxes with silver borders
+
+            allNamesDOMCollection[i].innerHTML = 
+            `
+            <div class = 'flex-container'>
+                <div class = 'flex-item'>
+                    <span id = "scientific"><i>${dragonflies[i].Scientific}</i></span>
+                    <br>
+                    <span id = "english">${dragonflies[i].English}</span>
+                </div>
+            </div>
+            `
+        
+        }
+
+        else {
+            allNamesDOMCollection[i].style.display = "none"
+        }
+
+        if (searchInput.value.length == 0) {
+            renderDragonflies()
+        }
+    }
+})
+
