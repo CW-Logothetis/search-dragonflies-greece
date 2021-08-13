@@ -5,14 +5,16 @@ let dragonflies = [
         "English": "Beautiful Demoiselle"}, 
     {
         "Family": "Calopterygidae", 
-        "Scientific": "Calopterix virgo ssp. Meridionale"}, 
+        "Scientific": "Calopteryx virgo ssp. Meridionale",
+        "English": "Beautiful Demoiselle ssp. Meridionale"}, 
     {
         "Family": "Calopterygidae", 
         "Scientific": "Calopteryx splendens", 
         "English": "Banded demoiselle"}, 
     {
         "Family": "Calopterygidae", 
-        "Scientific": "Calopterix splendens ssp. Balkanica"}, 
+        "Scientific": "Calopteryx splendens ssp. Balkanica",
+        "English": "Banded demoiselle ssp. Balkanica"}, 
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Erythromma najas", 
@@ -36,7 +38,7 @@ let dragonflies = [
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Ischnura pumilio", 
-        "English": "Scarce Blue-tailed Damselfly "}, 
+        "English": "Scarce Blue-tailed Damselfly"}, 
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Ceriagrion tenellum", 
@@ -60,7 +62,7 @@ let dragonflies = [
         "English": "Dainty bluet"}, 
     {
         "Family": "Coenagrionidae", 
-        "Scientific": "Pyrrhosoma elisabethae NW Gr CR", 
+        "Scientific": "Pyrrhosoma elisabethae", 
         "English": "Greek red damsel"}, 
     {
         "Family": "Coenagrionidae", 
@@ -80,7 +82,7 @@ let dragonflies = [
         "English": "S. emerald / Shy emerald"}, 
     {
         "Family": "Lestidae", 
-        "Scientific": "Lestes macrostigma COAST", 
+        "Scientific": "Lestes macrostigma", 
         "English": "Dark spreadwing"}, 
     {
         "Family": "Lestidae", 
@@ -93,11 +95,11 @@ let dragonflies = [
     {
         "Family": "Platycnmeididae", 
         "Scientific": "Platycnemis pennipes", 
-        "English": "White-legged/ blue featherleg"}, 
+        "English": "White-legged/ Blue featherleg"}, 
     {
         "Family": "Aeshnidae", 
         "Scientific": "Aeshna affinis", 
-        "English": "S. migrant / blue-eyed hawker"}, 
+        "English": "S. migrant / Blue-eyed hawker"}, 
     {
         "Family": "Aeshnidae", 
         "Scientific": "Aeshna isosceles", 
@@ -105,15 +107,15 @@ let dragonflies = [
     {
         "Family": "Aeshnidae", 
         "Scientific": "Aeshna mixta", 
-        "English": "Migrant Hawker"}, 
+        "English": "Migrant hawker"}, 
     {
         "Family": "Aeshnidae", 
         "Scientific": "Anax ephippiger*", 
         "English": "Vagrant emperor"}, 
     {
         "Family": "Aeshnidae", 
-        "Scientific": "Anax immaculifrons EAST", 
-        "English": "Magnificent emperor EAST"}, 
+        "Scientific": "Anax immaculifrons (EAST)", 
+        "English": "Magnificent emperor"}, 
     {
         "Family": "Aeshnidae", 
         "Scientific": "Anax imperator", 
@@ -266,25 +268,31 @@ let dragonflies = [
 
 const dragonflyDisplay = document.getElementById("dragonfly-display")
 
+
 function renderDragonflies() {
+    dragonflyDisplay.style.flexDirection = "column"
     let allDragonflies = ""
     for (let i = 0; i < dragonflies.length; i++) {
         allDragonflies += 
             `
-            <tr class="name">
-                <th>
-                <td id='family'><i>${dragonflies[i].Family}</i></td>
-                </th>
-                <th>
-                <td id='scientific'><i>${dragonflies[i].Scientific}</i></td>
-                </th>
-                <th>
-                <td id='english'>${dragonflies[i].English}</td>
-                </th> 
-            </tr>
+           
+            <div class="name">
+        
+                <span id='family'><i>${dragonflies[i].Family}</i></span>
+            
+        
+                <span id='scientific'><i>${dragonflies[i].Scientific}</i></span>
+            
+        
+                <span id='english'>${dragonflies[i].English}</span>
+                
+            </div>
+           
             `
+
     } 
     dragonflyDisplay.innerHTML = allDragonflies
+    
 }
 
 renderDragonflies()
@@ -297,12 +305,27 @@ searchInput.addEventListener("keyup", function(event) {
     let searchQuery = event.target.value.toLowerCase()
     let allNamesDOMCollection = document.getElementsByClassName("name")
 
+ 
+
     for (let i = 0; i < allNamesDOMCollection.length; i++) {
         const currentName = allNamesDOMCollection[i].textContent.toLowerCase()
 
         if (currentName.includes(searchQuery)) {
-            allNamesDOMCollection[i].style.display = "flex"
+        
+
+            dragonflyDisplay.style.flexDirection = "row"
             
+
+
+
+            allNamesDOMCollection[i].style.display = "flex"
+
+            allNamesDOMCollection[i].style.background = "white"
+            
+            allNamesDOMCollection[i].style.padding = "0"
+
+            allNamesDOMCollection[i].style.margin = "0"
+
             // a. simple original version - works
             // allNamesDOMCollection[i].innerHTML =
             // `
@@ -317,26 +340,19 @@ searchInput.addEventListener("keyup", function(event) {
 
             allNamesDOMCollection[i].innerHTML = 
             `
-            <div class = 'flex-container'>
                 <div class = 'flex-item'>
+                    <span id = "family"><i>${dragonflies[i].Family}</i></span>
+                    <br>
                     <span id = "scientific"><i>${dragonflies[i].Scientific}</i></span>
                     <br>
                     <span id = "english">${dragonflies[i].English}</span>
+                    <br>
+                    
+                    <img id = "dragonfly-img" src = "images/${dragonflies[i].Scientific}.jpg"
                 </div>
-            </div>
+           
             `
-            // `
-            // <ul class="flex-container">
-            //     <li class="flex-item">1</li>
-            //     <li class="flex-item">2</li>
-            //     <li class="flex-item">3</li>
-            //     <li class="flex-item">4</li>
-            //     <li class="flex-item">5</li>
-            //     <li class="flex-item">6</li>
-            //     <li class="flex-item">7</li>
-            //     <li class="flex-item">8</li>
-            // </ul>
-            // `
+      
         }
 
         else {
@@ -348,4 +364,3 @@ searchInput.addEventListener("keyup", function(event) {
         }
     }
 })
-

@@ -1,129 +1,134 @@
 html, body {
     margin: 0 auto;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* text-align: center; */
     color: #131313;
     background-color: #fff;
+}
+
+header {
+  background-color: #404040;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  /* color: rgb(231, 207, 74); */
+  background: -webkit-linear-gradient(white, skyblue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 32px;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin: 17px 10px 10px 10px;
+  padding: 10px;
+}
+
+h1 span {
+  font-size: 38px;
 }
 
 input {
-    margin: 30px 15px;
+    margin: 10px 5px;
 }
 
-/* #dragonfly-list {
-    display: block;
-    color:red;
-
+label {
+  margin: 50px 0 10px 0;
+  color: lightgrey;
 }
 
-#dragonfly-list .name {
-    list-style-type: none;
-} */
-
-table {
-    margin: 0 auto;
-    table-layout: auto;
-    width: auto;
-    border-collapse: collapse;
-    background-color: #adc2eb;
-    /* color: white; */
-    /* border: 2px solid gray; */
-    /* color: #4472C4; */
-  }
-
-  .table-section {
-    margin-bottom: 30px;
+#search {
+  margin: 30px;
 }
+
+#dragonfly-display {
+  padding: 0;
+  margin: 20px auto;
+  width: 750px;
+  /* border: 1px solid gold; */
   
-  /* thead th:nth-child(1) {
-    width: 20%;
-  }
-  
-  thead th:nth-child(2) {
-    width: 30%;
-  }
-  
-  thead th:nth-child(3) {
-    width: 50%;
-  } */
+  display: flex;
+  flex-wrap: wrap;
   
   
-  td {
-    padding: 7px;
-    letter-spacing: 1px;
-  }
   
-  th {
-    letter-spacing: 2px;
-  }
-    
-  /* tbody td {
-    text-align: center;
-  }
-  
-  tfoot th {
-    text-align: center;
-  } */
-  
-  tbody tr:nth-child(odd) {
-    background-color: #fff;
-  }
-  
-  tbody tr:nth-child(even) {
-    /* background-color: black; */
-    color: white;
-  }
+}
 
 .name {
+  padding: 7px 20px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  /* width: auto; */
+  /* border: 3px solid blue; */
+
   display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  border: 3px solid blue;
+  justify-content: left;
 }
 
-  #family {
-    /* display: flex; */
-    color: #404040;
+.name:nth-child(odd) {
+  background-color: #fff;
+}
+
+.name:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+  #family {    
+    color: #605f5f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 14px;
     min-width: 150px;
-    border: 2px solid red;
-  }
+    line-height: 28px;
 
-  #scientific {
-    /* display: flex;   */
-    color: #131313;
-    font-size: 16px;
-    font-weight: bold;
-    min-width: 325px;
-    border: 2px solid yellow;
-  }
-
-  #english {
     /* display: flex; */
-    color: #131313;
-    font-size: 16px;
-    border: 2px solid red;
+
+    /* border: 2px solid red; */
   }
 
-.flex-container {
-  padding: 0;
-  margin: 0;
-  border: 1px solid silver;
-  display: flex;
-  flex-wrap: wrap;
+  #scientific {    
+    color: #4e4c4c;
+    font-size: 16px;
+    /* font-weight: bold; */
+    min-width: 325px;
+    line-height: 28px;
+    /* display: flex; */
+
+    /* border: 2px solid yellow; */
+  }
+
+  #english {    
+    color: #4a4949;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: 500;
+    /* display: flex; */
+    
+    /* border: 2px solid red; */
+  }
+
+.flex-item {
+
+    padding: 10px;
+    width: 330px;
+    height: 350px;
+    margin: 10px;
+
+    /* border: 1px solid silver; */
+    border-radius: 6px;
+    box-shadow:
+                 1px 1px 3px 3px hsl(0, 0%, 97%),
+                 2px 2px 2px 2px silver;
+    /* display: flex;
+    flex-wrap: wrap; */
+
 }
 
-  .flex-item {
-    background: gold;
-    padding: 5px;
-    width: 300px;
-    height: 100px;
-    margin: 10px;
-    
-    /* line-height: 100px; */
-    color: white;
-    font-weight: bold;
-    font-size: 2em;
-    text-align: center;
+#dragonfly-img {
+  width: 220px;
+  display: flex;
+  margin: 10px auto;
 }
