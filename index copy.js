@@ -50,8 +50,7 @@ let dragonflies = [
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Coenagrion puella", 
-        "English": "Azure damselfly",
-        image: "images/coenagrioin-puella.JPG"}, 
+        "English": "Azure damselfly"}, 
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Coenagrion pulchellum", 
