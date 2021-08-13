@@ -3,18 +3,18 @@ let dragonflies = [
         "Family": "Calopterygidae", 
         "Scientific": "Calopteryx virgo", 
         "English": "Beautiful Demoiselle"}, 
-    {
-        "Family": "Calopterygidae", 
-        "Scientific": "Calopteryx virgo ssp. Meridionale",
-        "English": "Beautiful Demoiselle ssp. Meridionale"}, 
+    // {
+    //     "Family": "Calopterygidae", 
+    //     "Scientific": "Calopteryx virgo ssp. Meridionale",
+    //     "English": "Beautiful Demoiselle ssp. Meridionale"}, 
     {
         "Family": "Calopterygidae", 
         "Scientific": "Calopteryx splendens", 
         "English": "Banded demoiselle"}, 
-    {
-        "Family": "Calopterygidae", 
-        "Scientific": "Calopteryx splendens ssp. Balkanica",
-        "English": "Banded demoiselle ssp. Balkanica"}, 
+    // {
+    //     "Family": "Calopterygidae", 
+    //     "Scientific": "Calopteryx splendens ssp. Balkanica",
+    //     "English": "Banded demoiselle ssp. Balkanica"}, 
     {
         "Family": "Coenagrionidae", 
         "Scientific": "Erythromma najas", 
